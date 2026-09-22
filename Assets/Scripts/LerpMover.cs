@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class LerpMover : MonoBehaviour
@@ -8,29 +9,10 @@ public class LerpMover : MonoBehaviour
     private float timer;
     private bool toB = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         float t = timer / travelDuration;
-
-        //Vector3 start, target;
-        //if (toB)
-        //{
-        //    start = pointA.position;
-        //    target = pointB.position;
-        //}
-        //else
-        //{
-        //    start = pointB.position;
-        //    target = pointA.position;
-        //}
 
         Vector3 start = toB ? pointA.position : pointB.position;
         Vector3 target = toB ? pointB.position : pointA.position;
